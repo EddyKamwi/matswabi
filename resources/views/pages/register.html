@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Matswabi Funeral App</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+</head>
+
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join us to get started with your account</p>
+            </div>
+
+            <div class="auth-social">
+                <button type="button" class="btn-social btn-google">
+                    <i class="fab fa-google"></i>
+                    <span>Sign up with Google</span>
+                </button>
+                <div class="divider">
+                    <span>or</span>
+                </div>
+            </div>
+
+            <form class="auth-form" action="/register" method="POST" id="registerForm">
+                <div id="error-message" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span>Please correct the errors in the form.</span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name"
+                                required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name"
+                                required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <div class="input-validation">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    
+                    <div class="input-group">
+
+                        <select id="country-code">
+                            <option selected>+260</option>
+                        </select>
+
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Create a strong password"
+                            required>
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="password-strength" id="passwordStrength">
+                        <div class="strength-bar">
+                            <div class="strength-progress"></div>
+                        </div>
+                        <span class="strength-text">Password strength: Too weak</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword"
+                            placeholder="Confirm your password" required>
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="terms" id="terms" required>
+                        <span class="checkmark"></span>
+                        <span>I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy
+                                Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-block">
+                    <span>Create Account</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Already have an account? <a href="/login">Sign in</a></p>
+                <div class="footer-links">
+                    <a href="/privacy">Privacy Policy</a>
+                    <span>•</span>
+                    <a href="/terms">Terms of Service</a>
+                    <span>•</span>
+                    <a href="/help">Help Center</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script>
+        // Email validation
+        const emailInput = document.querySelector('#email');
+        const emailValidation = document.querySelector('.input-validation');
+
+        emailInput.addEventListener('input', function () {
+            const isValid = this.checkValidity() && this.value.includes('@');
+            emailValidation.classList.toggle('valid', isValid);
+        });
+
+        // Password strength checker
+        const passwordInput = document.querySelector('#password');
+        const strengthBar = document.querySelector('.strength-progress');
+        const strengthText = document.querySelector('.strength-text');
+
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (password.match(/[a-z]+/)) strength++;
+            if (password.match(/[A-Z]+/)) strength++;
+            if (password.match(/[0-9]+/)) strength++;
+            if (password.match(/[!@#$%^&*]+/)) strength++;
+
+            switch (strength) {
+                case 0:
+                    return { width: '0%', text: 'Too weak', color: '#ff4444' };
+                case 1:
+                    return { width: '20%', text: 'Weak', color: '#ffbb33' };
+                case 2:
+                    return { width: '40%', text: 'Fair', color: '#ffbb33' };
+                case 3:
+                    return { width: '60%', text: 'Good', color: '#00C851' };
+                case 4:
+                    return { width: '80%', text: 'Strong', color: '#007E33' };
+                case 5:
+                    return { width: '100%', text: 'Very strong', color: '#007E33' };
+            }
+        }
+
+        passwordInput.addEventListener('input', function () {
+            const strength = checkPasswordStrength(this.value);
+            strengthBar.style.width = strength.width;
+            strengthBar.style.backgroundColor = strength.color;
+            strengthText.textContent = 'Password strength: ' + strength.text;
+        });
+
+        // Toggle password visibility
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function () {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // Form validation and submission
+        document.querySelector('#registerForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const password = passwordInput.value;
+            const confirmPassword = document.querySelector('#confirmPassword').value;
+            const errorMessage = document.querySelector('#error-message');
+            const submitButton = this.querySelector('.btn-block');
+
+            if (password !== confirmPassword) {
+                errorMessage.querySelector('span').textContent = 'Passwords do not match.';
+                errorMessage.style.display = 'flex';
+                return;
+            }
+
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Creating account...';
+
+            // Simulate API call
+            setTimeout(() => {
+                window.location.href = '/dashboard';
+            }, 1500);
+        });
+
+        // Theme toggle
+        const themeToggle = document.querySelector('.theme-toggle');
+        themeToggle.addEventListener('click', function () {
+            document.body.classList.toggle('dark-mode');
+            const icon = this.querySelector('i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        });
+    </script>
+</body>
+
+</html>

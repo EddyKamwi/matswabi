@@ -1,0 +1,199 @@
+:root{
+    --primary: #e9850b;
+    --primary-light: #ff8800;
+    --primary-dark: #c76d00;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-600: #6b7280;
+}
+/* Error Pages Styles */
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+    padding: 2rem;
+}
+
+.error-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.error-content {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 2.5rem;
+    text-align: center;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.logo-icon {
+    margin-bottom: 0.5rem;
+}
+
+.logo-icon svg {
+    width: 48px;
+    height: 60px;
+}
+
+.logo-text svg {
+    height: 24px;
+    width: auto;
+}
+
+.logo svg {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover svg {
+    transform: scale(1.05);
+    color: var(--gray-100);
+}
+
+/* Error Content */
+.error-main {
+    margin-bottom: 2rem;
+}
+
+.error-main h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0 var(--primary-light);
+}
+
+.error-main p {
+    font-size: 1.25rem;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+}
+
+/* Action Button */
+.error-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.error-actions .btn {
+    min-width: 200px;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+    border-radius: var(--border-radius);
+}
+
+.error-actions .btn i {
+    font-size: 1.125rem;
+}
+
+.error-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--gray-100);
+}
+
+.error-actions .btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+
+/* Dark Mode */
+.dark-mode .error-page {
+    background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
+}
+
+.dark-mode .error-content {
+    background-color: var(--gray-800);
+}
+
+.dark-mode .error-main h1 {
+    text-shadow: 2px 2px 0 rgba(233, 133, 11, 0.3);
+}
+
+.dark-mode .error-main p {
+    color: var(--gray-400);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .error-content {
+        padding: 2rem;
+    }
+
+    .error-main h1 {
+        font-size: 4rem;
+    }
+
+    .error-main p {
+        font-size: 1.125rem;
+    }
+
+    .error-actions .btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+/* Loading Animation */
+.loading-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--primary-light);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Additional Error States */
+.error-state-offline .error-icon {
+    color: var(--gray-600);
+}
+
+.error-state-maintenance .error-icon {
+    color: var(--gray-50);
+}
+
+.error-state-forbidden .error-icon {
+    color: var(--gray-50);
+}
+

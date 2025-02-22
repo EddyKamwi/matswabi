@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Matswabi Funeral App</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+</head>
+
+<body class="dashboard-body">
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <!-- icon -->
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" id="icon" width="200px" height="60px"
+                    viewBox="0 0 222.000000 277.000000" preserveAspectRatio="xMidYMid meet">
+
+                    <g transform="translate(0.000000,277.000000) scale(0.100000,-0.100000)" fill="#e9850b"
+                        stroke="none">
+                        <path d="M661 2523 c-5 -10 -59 -133 -120 -274 -60 -141 -118 -272 -127 -291
+    -15 -33 -14 -48 55 -454 172 -1009 223 -1299 227 -1306 4 -7 834 -12 834 -5 0
+    1 36 213 80 472 44 259 110 649 147 867 l66 397 -27 63 c-101 235 -231 525
+    -239 536 -7 9 -109 12 -448 12 -407 0 -439 -1 -448 -17z m549 -418 l0 -125
+    130 0 130 0 0 -105 0 -105 -130 0 -130 0 0 -305 0 -305 -100 0 -100 0 0 305 0
+    304 -127 3 -128 3 0 100 0 100 128 3 127 3 0 124 0 125 100 0 100 0 0 -125z" />
+                    </g>
+                </svg>
+
+                <!-- logo -->
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 0 592.000000 166.000000"
+                    preserveAspectRatio="xMidYMid meet">
+
+                    <g transform="translate(0.000000,166.000000) scale(0.100000,-0.100000)" fill="#e9850b"
+                        stroke="none">
+                        <path d="M0 830 l0 -830 2960 0 2960 0 0 830 0 830 -2960 0 -2960 0 0 -830z
+    m5730 5 l0 -645 -2765 0 -2765 0 0 645 0 645 2765 0 2765 0 0 -645z" />
+                        <path d="M2612 1180 c-23 -5 -59 -19 -80 -30 -100 -57 -119 -185 -41 -274 33
+    -39 72 -56 190 -86 45 -12 95 -28 111 -36 58 -30 56 -97 -4 -134 -44 -26 -131
+    -27 -174 -1 -28 17 -64 73 -64 101 0 7 -7 10 -16 6 -9 -3 -38 -6 -65 -6 -39 0
+    -49 -3 -49 -16 0 -39 26 -98 62 -139 53 -60 109 -80 223 -79 162 1 253 66 263
+    188 6 71 -11 117 -58 159 -37 34 -81 51 -232 92 -76 20 -113 52 -104 88 8 35
+    53 57 113 57 62 0 94 -17 115 -60 l17 -35 66 3 c59 3 65 6 65 25 -1 61 -63
+    140 -131 166 -40 15 -158 21 -207 11z" />
+                        <path d="M420 835 l0 -345 59 0 58 0 7 46 c3 26 6 146 7 268 l0 221 24 -90
+    c13 -49 42 -170 65 -267 l42 -178 63 0 c64 0 64 0 73 33 4 17 33 134 63 259
+    32 137 57 220 61 210 4 -9 7 -126 7 -259 l1 -243 60 0 60 0 0 345 0 346 -102
+    -3 -101 -3 -58 -223 c-31 -123 -60 -226 -63 -229 -3 -3 -8 8 -12 23 -4 16 -31
+    119 -59 229 l-52 200 -101 3 -102 3 0 -346z" />
+                        <path d="M1401 1158 c-5 -13 -65 -168 -134 -345 l-125 -323 73 0 73 0 27 80
+    27 80 131 0 132 0 29 -80 28 -80 75 0 c56 0 74 3 70 13 -3 6 -65 162 -137 345
+    l-133 332 -64 0 c-57 0 -64 -2 -72 -22z m116 -270 l40 -113 -80 -3 c-44 -2
+    -82 -1 -84 2 -6 6 70 226 78 226 4 0 24 -51 46 -112z" />
+                        <path d="M1840 1120 l0 -60 100 0 100 0 0 -285 0 -285 65 0 65 0 0 285 0 285
+    105 0 105 0 0 60 0 60 -270 0 -270 0 0 -60z" />
+                        <path d="M3030 1168 c1 -7 36 -161 79 -343 l78 -330 75 -3 75 -3 63 238 c34
+    131 66 247 70 258 9 23 1 48 85 -272 l59 -223 72 0 c61 0 73 3 78 18 12 41
+    156 652 156 661 0 7 -25 11 -65 11 l-64 0 -10 -37 c-5 -21 -29 -127 -52 -236
+    -24 -108 -46 -194 -49 -190 -4 5 -28 94 -54 198 -26 105 -51 207 -57 228 l-10
+    38 -82 -3 -82 -3 -60 -222 c-33 -122 -63 -225 -66 -228 -3 -3 -28 98 -55 225
+    l-49 230 -67 0 c-48 0 -68 -4 -68 -12z" />
+                        <path d="M4191 1158 c-5 -13 -65 -168 -134 -345 l-125 -323 73 0 73 0 27 80
+    27 80 131 0 132 0 29 -80 28 -80 75 0 c56 0 74 3 70 13 -3 6 -65 162 -137 345
+    l-133 332 -64 0 c-57 0 -64 -2 -72 -22z m116 -270 l40 -113 -80 -3 c-44 -2
+    -82 -1 -84 2 -6 6 70 226 78 226 4 0 24 -51 46 -112z" />
+                        <path d="M4670 835 l0 -348 213 6 c121 3 225 10 242 17 96 37 147 173 95 258
+    -17 27 -63 65 -93 75 -5 1 9 21 31 44 56 59 66 118 31 190 -14 30 -35 52 -66
+    70 -44 26 -51 26 -249 31 l-204 5 0 -348z m379 208 c11 -10 24 -32 27 -50 5
+    -27 1 -37 -24 -63 -30 -30 -32 -30 -136 -30 l-106 0 0 80 0 80 109 0 c89 0
+    113 -3 130 -17z m20 -289 c37 -31 42 -79 12 -115 -18 -23 -27 -24 -145 -27
+    l-126 -4 0 86 0 86 114 0 c109 0 116 -1 145 -26z" />
+                        <path d="M5360 835 l0 -345 70 0 70 0 0 345 0 345 -70 0 -70 0 0 -345z" />
+                    </g>
+                </svg>
+
+            </div>
+            <button class="sidebar-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="nav-sections">
+            <div class="nav-section">
+                <span class="nav-label">Main</span>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="/" class="nav-link active">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/services" class="nav-link">
+                                <i class="fas fa-concierge-bell"></i>
+                                <span>Services</span>
+                                <span class="nav-badge">New</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/bookings" class="nav-link">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Bookings</span>
+                                <span class="nav-badge">5</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-section">
+                <span class="nav-label">Management</span>
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li>
+                            <a href="/clients" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Clients</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/payments" class="nav-link">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Payments</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/reports" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Reports</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=John+Doe&background=e9850b&color=fff" alt="John Doe">
+                <div class="user-info">
+                    <span class="user-name">John Doe</span>
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+            <div class="footer-actions">
+                <a href="settings.html" class="footer-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+                <a href="#" class="footer-link logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+
+        <!-- Top Bar -->
+        <div class="dashboard-header">
+            <div class="header-left">
+                <button class="sidebar-toggle" title="Toggle sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="header-search">
+                    <input type="search" placeholder="Search services, clients, bookings...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="header-actions">
+                    <button class="header-button search-toggle" title="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <div class="quick-actions">
+                        <button class="header-button" title="Quick Actions">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="quick-actions-menu">
+                            <a href="/new-booking" class="quick-action-item">
+                                <i class="fas fa-calendar-plus"></i>
+                                <span>New Booking</span>
+                            </a>
+                            <a href="/add-client" class="quick-action-item">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add Client</span>
+                            </a>
+                            <a href="/create-invoice" class="quick-action-item">
+                                <i class="fas fa-file-invoice"></i>
+                                <span>Create Invoice</span>
+                            </a>
+                            <a href="/schedule-service" class="quick-action-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Schedule Service</span>
+                            </a>
+                        </div>
+                    </div>
+                    <button class="header-button theme-toggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="notifications-wrapper">
+                        <button class="header-button notifications" title="Notifications">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <div class="notifications-panel">
+                            <div class="notifications-header">
+                                <h3>Notifications</h3>
+                                <button class="mark-all-read">Mark all as read</button>
+                            </div>
+                            <div class="notifications-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon booking">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>New booking request from Sarah Johnson</p>
+                                        <span class="notification-time">5 minutes ago</span>
+                                    </div>
+                                    <button class="notification-action">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon payment">
+                                        <i class="fas fa-credit-card"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Payment received for Invoice #1234</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                    <button class="notification-action">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon reminder">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Service reminder: Follow-up with client</p>
+                                        <span class="notification-time">2 hours ago</span>
+                                    </div>
+                                    <button class="notification-action">
+                                        <i class="fas fa-ellipsis-v"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notifications-footer">
+                                <a href="/notifications" class="view-all">View all notifications</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <div class="user-info">
+                            <span class="user-name">John Doe</span>
+                            <span class="user-role">Administrator</span>
+                        </div>
+                        <div class="user-avatar">
+                            <img src="https://ui-avatars.com/api/?name=John+Doe&background=e9850b&color=fff"
+                                alt="John Doe">
+                            <span class="status-dot"></span>
+                        </div>
+                        <i class="fas fa-chevron-down"></i>
+                        <div class="user-dropdown">
+                            <div class="user-dropdown-header">
+                                <div class="user-dropdown-avatar">
+                                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=e9850b&color=fff"
+                                        alt="John Doe">
+                                </div>
+                                <div class="user-dropdown-info">
+                                    <span class="name">John Doe</span>
+                                    <span class="email">john.doe@example.com</span>
+                                </div>
+                            </div>
+                            <div class="user-dropdown-body">
+                                <a href="/profile" class="dropdown-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>My Profile</span>
+                                </a>
+                                <a href="/settings" class="dropdown-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>Settings</span>
+                                </a>
+                                <a href="/help" class="dropdown-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Help Center</span>
+                                </a>
+                            </div>
+                            <div class="user-dropdown-footer">
+                                <a href="/logout" class="dropdown-item logout">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Overview Cards -->
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon bookings">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Total Bookings</h3>
+                        <p class="number">248</p>
+                        <div class="trend-info">
+                            <span class="trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                12.5%
+                            </span>
+                            <span class="period">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon revenue">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Total Revenue</h3>
+                        <p class="number">$45,250</p>
+                        <div class="trend-info">
+                            <span class="trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                8.2%
+                            </span>
+                            <span class="period">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon clients">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Active Clients</h3>
+                        <p class="number">156</p>
+                        <div class="trend-info">
+                            <span class="trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                5.3%
+                            </span>
+                            <span class="period">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overview-card">
+                    <div class="card-icon services">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="card-info">
+                        <h3>Completed Services</h3>
+                        <p class="number">189</p>
+                        <div class="trend-info">
+                            <span class="trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                15.8%
+                            </span>
+                            <span class="period">vs last month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <div class="section-title">
+                        <h2>Recent Activity</h2>
+                        <p class="section-subtitle">Track your latest updates and activities</p>
+                    </div>
+                    <div class="section-actions">
+                        <select class="period-select">
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fas fa-eye"></i>
+                            View All
+                        </a>
+                    </div>
+                </div>
+                <div class="activity-list">
+                    <!-- Activity items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Bookings Overview</h3>
+                        <select class="chart-period">
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>
+                    <canvas id="bookingsChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Revenue Analysis</h3>
+                        <select class="chart-period">
+                            <option value="weekly">Weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="yearly">Yearly</option>
+                        </select>
+                    </div>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="assets/js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+
+</html>
